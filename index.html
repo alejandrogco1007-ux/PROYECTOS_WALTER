@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reloj</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        #reloj {
+            font-size: 80px;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="reloj">00:00:00</div>
+
+    <script>
+        function actualizarReloj() {
+            let ahora = new Date();
+
+            let horas = String(ahora.getHours()).padStart(2, "0");
+            let minutos = String(ahora.getMinutes()).padStart(2, "0");
+            let segundos = String(ahora.getSeconds()).padStart(2, "0");
+
+            document.getElementById("reloj").innerHTML =
+                horas + ":" + minutos + ":" + segundos;
+        }
+
+        actualizarReloj();
+
+        setInterval(actualizarReloj, 1000);
+    </script>
+
+</body>
+</html>
